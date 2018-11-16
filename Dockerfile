@@ -3,7 +3,7 @@ ARG TAG="20181113-edge"
 FROM huggla/alpine-official:$TAG as alpine
 
 #ARG BUILDDEPS="glib libev ragel lua zlib libbz2 libressl2.7-libssl"
-ARG BUILDDEPS="gcc g++ glib-dev make libtool automake autoconf libev-dev lua-dev zlib-dev libressl-dev perl mailcap"
+ARG BUILDDEPS="gcc g++ glib-dev make libtool automake autoconf libev-dev lua-dev zlib-dev libressl-dev perl mailcap ssl_client"
 ARG DOWNLOAD="https://git.lighttpd.net/lighttpd/lighttpd2.git/snapshot/lighttpd2-master.tar.gz"
 ARG DESTDIR="/lighttpd2"
 
