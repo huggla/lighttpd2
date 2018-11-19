@@ -7,7 +7,7 @@ ARG BUILDDEPS="gcc g++ glib-dev make libtool automake autoconf libev-dev lua-dev
 ARG DOWNLOAD="https://git.lighttpd.net/lighttpd/lighttpd2.git/snapshot/lighttpd2-master.tar.gz"
 ARG DESTDIR="/lighttpd2"
 
-RUN mkdir -p "$DESTDIR/run/fastcgi" \
+RUN mkdir -p "$DESTDIR/run/fastcgi" "$DESTDIR/etc/lighttpd2" \
  && apk add $BUILDDEPS \
  && buildDir="$(mktemp -d)" \
  && cd $buildDir \
@@ -17,7 +17,8 @@ RUN mkdir -p "$DESTDIR/run/fastcgi" \
  && ./configure --prefix=/usr/local --with-lua --with-openssl --with-kerberos5 --with-zlib --with-bzip2 --includedir=/usr/include/lighttpd2 \
  && make \
  && make install \
- && perl contrib/create-mimetypes.conf.pl > "$DESTDIR/mimetypes.conf" \
- && mv contrib/default.html "$DESTDIR/default.html"
+# && perl contrib/create-mimetypes.conf.pl > "$DESTDIR/mimetypes.conf" \
+ && mv contrib/default.html "$DESTDIR/default.html" \
+ && mv contrib/*.conf contrib/"$DESTDIR/etc/lighttpd2/"
 
  
