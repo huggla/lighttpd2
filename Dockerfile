@@ -14,7 +14,7 @@ RUN mkdir -p "$DESTDIR/run/fastcgi" "$DESTDIR/etc/lighttpd2" \
  && wget $DOWNLOAD \
  && tar -xvp -f lighttpd2-master.tar.gz --strip-components 1 \
  && ./autogen.sh \
- && ./configure --prefix=/usr/local --with-lua --with-openssl --with-kerberos5 --with-zlib --with-bzip2 --includedir=/usr/include/lighttpd2 \
+ && ./configure --prefix=/usr --with-lua --with-openssl --with-kerberos5 --with-zlib --with-bzip2 --includedir=/usr/include/lighttpd2 \
  && make \
  && make install \
  && mv contrib/default.html "$DESTDIR/default.html" \
