@@ -17,8 +17,8 @@ RUN mkdir -p "$DESTDIR/run/fastcgi" "$DESTDIR/etc/lighttpd2" \
  && ./configure --prefix=/usr/local --with-lua --with-openssl --with-kerberos5 --with-zlib --with-bzip2 --includedir=/usr/include/lighttpd2 \
  && make \
  && make install \
- && mv $buildDir/contrib/default.html "$DESTDIR/default.html" \
- && mv $buildDir/contrib/*.conf contrib/"$DESTDIR/etc/lighttpd2/"
+ && mv contrib/default.html "$DESTDIR/default.html" \
+ && mv contrib/*.conf "$DESTDIR/etc/lighttpd2/"
  
  FROM huggla/busybox:$TAG as image
  
