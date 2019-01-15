@@ -1,7 +1,7 @@
-ARG TAG="20181204"
+ARG TAG="20190115"
 ARG DESTDIR="/lighttpd2"
 
-FROM huggla/alpine-official:$TAG as alpine
+FROM huggla/alpine-official as alpine
 
 ARG BUILDDEPS="gcc g++ glib-dev make libtool automake autoconf libev-dev lua-dev ragel zlib-dev libressl-dev perl mailcap ssl_client"
 ARG DOWNLOAD="https://git.lighttpd.net/lighttpd/lighttpd2.git/snapshot/lighttpd2-master.tar.gz"
