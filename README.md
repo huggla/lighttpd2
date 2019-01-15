@@ -1,2 +1,2 @@
 # lighttpd2
-Lighttpd2 files
+Lighttpd2 files for Alpine edge.
